@@ -62,7 +62,7 @@ router.post('/loggedin', function (req, res, next) {
             return res.send("Incorrect Username");
         }
         const hashedPassword = result[0].password;
-
+        
         // Compare the password supplied with the password in the database
         bcrypt.compare(plainPassword, hashedPassword, function(err, match) {
             if (err) {
